@@ -10,10 +10,10 @@ while true; do
   
   if [[ ! -z "$users" ]]; then
     for user in $users; do
-      curl -s -o /dev/null "https://status.citytriathlon.cz/api/push/YStIOPO5ys?status=down&msg=$user"
+      curl -s -o /dev/null "<uptime-kuma-push-url>?status=down&msg=$user"
     done
   else
-    curl -s -o /dev/null "https://status.citytriathlon.cz/api/push/YStIOPO5ys?status=up"
+    curl -s -o /dev/null "<uptime-kuma-push-url>?status=up"
   fi
   sleep 45
 done
@@ -40,7 +40,7 @@ WantedBy=multi-user.target
 #! /bin/bash
 
 USER=$(whoami)
-curl -s -o /dev/null "https://status.citytriathlon.cz/api/push/YStIOPO5ys?status=down&msg=${USER}"
+curl -s -o /dev/null "<uptime-kuma-push-url>?status=down&msg=${USER}"
 if [[ -n $SSH_ORIGINAL_COMMAND ]]
 then
     exec /bin/bash -c "$SSH_ORIGINAL_COMMAND"
