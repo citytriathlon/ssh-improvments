@@ -36,6 +36,10 @@ WantedBy=multi-user.target
 
 ## Login shell script
 
+This script needs to be mentioned inside the /etc/ssh/sshd_config 
+ForceCommand /path/to/script
+It will allow to still pass the command trough SSH
+
 ```shell
 #! /bin/bash
 
