@@ -49,3 +49,4 @@ else
 fi
 ```
 
+[ssh-audit python module](https://pypi.org/project/ssh-audit/)
